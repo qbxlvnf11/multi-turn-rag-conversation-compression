@@ -30,7 +30,7 @@ docker exec -it multi_turn_test_env bash
 ```
 
 
-Multi-turn Conversational RAG Test
+Multi-turn Conversation RAG Test
 =============
 
 ### - LLM Summarization Strategy
