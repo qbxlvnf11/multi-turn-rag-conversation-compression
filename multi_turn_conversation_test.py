@@ -8,7 +8,7 @@ from llm.utils import get_llm
 from core.llm_summarization_strategy import get_generate_conversation_summary_prompot
 
 def get_parser():
-        
+    
     parser = argparse.ArgumentParser()
     parser.add_argument('--config_path', type=str, \
         default='./config/llm_config.yaml')
@@ -37,7 +37,7 @@ if __name__ == '__main__':
     ## LLM
     llm = get_llm(config)
     # print('llm:', llm)
-
+    
     ## Input
     demonstration_input = None
     if args.demonstration_file is not None:
@@ -48,12 +48,6 @@ if __name__ == '__main__':
     generate_conversation_summary_prompot = get_generate_conversation_summary_prompot(conversation_history_input, demonstrations=demonstration_input)
     
     ## Generation
-    gen_config = {
-        "model":"",
-        "messages":"",
-        "temperature":"",
-
-    }
     response = llm.generate(
         messages=generate_conversation_summary_prompot,
         streaming=False,
@@ -65,4 +59,4 @@ if __name__ == '__main__':
         # **config['llm'],
     )
 
-    print('Response:', response)
+    print(response)

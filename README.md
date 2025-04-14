@@ -4,7 +4,7 @@ Methods of Multi-turn Conversational RAG
 ### - Conversation compression method for multi-turn RAG
    - Last Response Strategy
    - Rewrite Strategy
-   - LLM Summarization Strategy
+   - [LLM Summarization Strategy](https://github.com/qbxlvnf11/multi-turn-rag-conversation-compression/blob/main/core/llm_summarization_strategy.py)
    - Refert to [CORAL Paper](https://arxiv.org/abs/2410.23090)
 
 
@@ -38,9 +38,19 @@ Multi-turn Conversational RAG Test
     - When using the GPT API, enter the API KEY in the '.env' file created after executing the initialization command
 
    - Last Response Strategy
-      - Examples of demonstration file 
+      - [Examples of conversation history file](https://github.com/qbxlvnf11/multi-turn-rag-conversation-compression/blob/main/samples/conversation_history.json)
+      - [Examples of demonstration file](https://github.com/qbxlvnf11/multi-turn-rag-conversation-compression/blob/main/samples/demonstrations.json)
       - Demonstartion file is not required
+      
+```
+python multi_turn_conversation_test.py --config_path {config_path} --conversation_history_file {conversation_history_file_path} --demonstration_file {demonstration_file_path}
+```
 
-```
-python multi_turn_conversation_test.py ----demonstration_file {demonstration_file_path}
-```
+
+=============
+
+#### - LinkedIn: https://www.linkedin.com/in/taeyong-kong-016bb2154
+
+#### - Blog URL: https://blog.naver.com/qbxlvnf11
+
+#### - Email: qbxlvnf11@google.com, qbxlvnf11@naver.com
