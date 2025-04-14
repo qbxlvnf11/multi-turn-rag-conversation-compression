@@ -1,4 +1,4 @@
-Methods of Multi-turn Conversational RAG
+Multi-turn Conversation RAG
 =============
 
 ### - Conversation compression method for multi-turn RAG
