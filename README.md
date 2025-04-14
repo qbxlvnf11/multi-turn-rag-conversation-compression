@@ -35,7 +35,7 @@ Multi-turn Conversational RAG Test
 
 ### - LLM Summarization Strategy
 
-    - When using the GPT API, enter the API KEY in the '.env' file created after executing the initialization command
+   - When using the GPT API, enter the API KEY in the '.env' file created after executing the initialization command
 
    - Last Response Strategy
       - [Examples of conversation history file](https://github.com/qbxlvnf11/multi-turn-rag-conversation-compression/blob/main/samples/conversation_history.json)
