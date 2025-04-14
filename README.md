@@ -39,6 +39,7 @@ Multi-turn Conversational RAG Test
 
    - Last Response Strategy
       - Examples of demonstration file 
+      - Demonstartion file is not required
 
 ```
 python multi_turn_conversation_test.py ----demonstration_file {demonstration_file_path}
