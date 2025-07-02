@@ -3,7 +3,7 @@ Multi-Turn Conversation RAG
 
 ### - Conversation compression method for multi-turn RAG
    - Last Response Strategy
-   - Rewrite Strategy
+   - [Rewrite Strategy](https://github.com/qbxlvnf11/multi-turn-rag-conversation-compression/blob/main/core/simple_rewriting_strategy.py)
    - [LLM Summarization Strategy](https://github.com/qbxlvnf11/multi-turn-rag-conversation-compression/blob/main/core/llm_summarization_strategy.py)
    - Refert to [CORAL Paper](https://arxiv.org/abs/2410.23090)
 
@@ -43,7 +43,18 @@ Multi-turn Conversation RAG Test
       - Demonstartion file is not required
       
 ```
-python multi_turn_conversation_test.py --config_path {config_path} --conversation_history_file {conversation_history_file_path} --demonstration_file {demonstration_file_path}
+python multi_turn_conversation_test_summarization.py --config_path {config_path} --conversation_history_file {conversation_history_file_path} --demonstration_file {demonstration_file_path}
+```
+
+### - Simple Rewriting Strategy
+
+   - When using the GPT API, enter the API KEY in the '.env' file created after executing the initialization command
+
+   - Step 1. Extracting keywords
+   - Step 2(3). Combine keywords and generate final questions
+
+```
+python multi_turn_conversation_test_simple_rewriting.py --config_path {config_path}
 ```
 
 

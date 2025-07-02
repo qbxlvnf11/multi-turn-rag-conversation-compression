@@ -40,3 +40,19 @@ def get_llm(config: dict) -> ChatOpenAI:
         max_retries=config['llm']['max_retries'],
         request_timeout=config['llm']['request_timeout'],
     )
+
+def llm_generate(config, llm, messages, streaming=False, callbacks=None):
+    
+    # messages = [{"role": "user", "content": prompt}] ...
+    # print(f'== LLM INPUT:', messages)
+
+    return llm.generate(
+        messages=messages,
+        streaming=streaming,
+        callbacks=callbacks,
+        model=config['llm']['model'],
+        temperature=config['llm']['temperature'],
+        max_tokens=config['llm']['max_tokens'],
+        top_p=config['llm']['top_p']
+        # **config['llm'],
+    )

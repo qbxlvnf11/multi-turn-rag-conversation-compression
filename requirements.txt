@@ -23,8 +23,9 @@ ollama
 langchain
 bitsandbytes
 deepspeed
-openai
+openai==1.58.1
 tiktoken
 dotenv
 chunker
 networkx
+dotenv

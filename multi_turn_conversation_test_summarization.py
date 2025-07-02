@@ -4,7 +4,7 @@ from dotenv import load_dotenv
 
 from config.config_file_loader import ConfigYamlLoader
 from utils import parse_json_file_cases
-from llm.utils import get_llm
+from llm.utils import get_llm, llm_generate
 from core.llm_summarization_strategy import get_generate_conversation_summary_prompot
 
 def get_parser():
@@ -48,15 +48,27 @@ if __name__ == '__main__':
     generate_conversation_summary_prompot = get_generate_conversation_summary_prompot(conversation_history_input, demonstrations=demonstration_input)
     
     ## Generation
-    response = llm.generate(
-        messages=generate_conversation_summary_prompot,
-        streaming=False,
-        callbacks=None,
-        model=config['llm']['model'],
-        temperature=config['llm']['temperature'],
-        max_tokens=config['llm']['max_tokens'],
-        top_p=config['llm']['top_p']
-        # **config['llm'],
-    )
+    # response = llm.generate(
+    #     messages=generate_conversation_summary_prompot,
+    #     streaming=False,
+    #     callbacks=None,
+    #     model=config['llm']['model'],
+    #     temperature=config['llm']['temperature'],
+    #     max_tokens=config['llm']['max_tokens'],
+    #     top_p=config['llm']['top_p']
+    #     # **config['llm'],
+    # )
+    # response = llm.generate(
+    #     messages=[{"role": "user", "content": generate_conversation_summary_prompot}],
+    #     streaming=False,
+    #     callbacks=None,
+    #     model=config['llm']['model'],
+    #     temperature=config['llm']['temperature'],
+    #     max_tokens=config['llm']['max_tokens'],
+    #     top_p=config['llm']['top_p']
+    #     # **config['llm'],
+    # )
 
-    print(response)
+    messages = generate_conversation_summary_prompot #[{"role": "user", "content": generate_conversation_summary_prompot}]
+    response = llm_generate(config, llm, messages, streaming=False, callbacks=None)
+    print('Response:', response)
